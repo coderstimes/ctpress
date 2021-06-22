@@ -32,7 +32,6 @@ defined( 'ABSPATH' ) || exit;
          <div class="header-top">
             <div class="container">
                <div class="row">
-
                   <div class="col-sm-4">
                      <?php get_template_part( 'template-parts/header/site', 'social' ); ?>
                      <div class="top-left-menu">
@@ -40,7 +39,9 @@ defined( 'ABSPATH' ) || exit;
                   </div>
 
                   <div class="col-sm-8 pull-right">
-                     <?php get_template_part( 'template-parts/header/site', 'top-right' ); ?>
+                     <?php 
+                        // get_template_part( 'template-parts/header/site', 'top-right' ); 
+                     ?>
                   </div>
                </div>
             </div>
@@ -49,13 +50,35 @@ defined( 'ABSPATH' ) || exit;
          <div class="header-mid d-none d-md-block">
             <div class="container">
                <div class="row">
-                  <div class="col-md-4"></div>
-                  <div class="col-md-4">
 
-                     <?php get_template_part( 'template-parts/header/site', 'logo' ); ?>
-                     
-                  </div>
-                  <div class="col-md-4"></div>                  
+                  <?php 
+
+                  switch( ctpress_get_option('logo-position') ) {
+                     case 1 :  
+                        /*call left position logo */
+                        get_template_part( 'template-parts/header/logo', 'left' ); 
+                        break;
+                     case 2 : 
+                        /*call center position logo */
+                        get_template_part( 'template-parts/header/logo', 'center' ); 
+                        break;
+                     case 3 :
+                        /*call right position logo */
+                        get_template_part( 'template-parts/header/logo', 'right' ); 
+                        break;
+                     case 4 :
+                        /*call left position logo with left 8 column*/
+                        get_template_part( 'template-parts/header/logo-left', 'column' ); 
+                        break;
+                     case 5 :
+                        /*call left position logo with right 8 column*/
+                        get_template_part( 'template-parts/header/logo-right', 'column' ); 
+                        break;
+                     default:
+                     break;
+                  }
+
+                  ?>
                </div>
             </div>
          </div>

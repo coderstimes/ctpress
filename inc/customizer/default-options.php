@@ -53,6 +53,7 @@ function ctpress_default_options() {
 		'logo'            		 => ['url'=>get_template_directory_uri().'/assets/images/logo.svg'],
 		'footer-logo'            => ['url'=>get_template_directory_uri().'/assets/images/logo.svg'],
 		'favicon'            	 => ['url'=>get_template_directory_uri().'/assets/images/favicon.png'],
+		'logo-position'          => 2,
 		'theme-date'             => true,
 		'comment_option'         => 0,
 		'fb_appId'         		 => '492209628792946',

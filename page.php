@@ -52,7 +52,9 @@ get_header();
 <script>
    (function($){
       $(document).ready(function(){
-         $('.img-holder .img-caption').css('width',$(".img-holder img")[0].clientWidth);        
+         if( $('.img-holder .img-caption')[0] ) {
+            $('.img-holder .img-caption').css('width',$(".img-holder img")[0].clientWidth); 
+         }                
       });      
    })(jQuery);   
 </script>

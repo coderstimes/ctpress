@@ -9,6 +9,15 @@
 ( function( $ ) {
 
 	/*menu search box*/
+	wp.customize( 'ctpress[logo][url]', function( value ) {	
+		value.bind( function( logo ) {
+			if ( logo.length > 5 ) {
+				$(".logo img").attr("src", logo);
+			}
+		} );
+	} );
+
+	/*menu search box*/
 	wp.customize( 'ctpress[menu_search]', function( values ) {	
 		values.bind( function( value ) {
 			if ( value ) {

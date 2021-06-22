@@ -436,16 +436,16 @@ article:hover figure a:before,
 	}
 }
 
-.logo {
+/*.logo {
 	margin: 8px 0;
 	text-align: center;
-}
-.logo a {
+}*/
+/*.logo a {
 	display: flex
-}
+}*/
 .logo img {
-	width: 180px;
-	margin: 0 auto;
+	/*width: 180px;*/
+	/*margin: 0 auto;*/
 	max-height: 100px;
 }
 

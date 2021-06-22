@@ -15,8 +15,9 @@ if ( !$image_url ) {
 
 $image = sprintf('<img class="img-responsive mx-auto d-block" src="%s" alt="%s">',$image_url,get_the_title());
 
-if( $img_caption = get_the_post_thumbnail_caption() && !ctpress_get_option('page_img_cap') ) : 
-   $img_caption = sprintf('<p class="img-caption img-layer-thumb"> %s </p>',$img_caption);       
+$img_caption = '';
+if( get_the_post_thumbnail_caption() && !ctpress_get_option('post_img_cap') ) :
+   $img_caption = sprintf( '<p class="img-caption img-layer-thumb"> %1$s </p>',get_the_post_thumbnail_caption() ); 
 endif; 
 
 

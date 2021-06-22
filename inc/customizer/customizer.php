@@ -16,6 +16,7 @@ final class CTPressCustomizer {
 		require( get_template_directory() . '/inc/customizer/controls/headline-control.php' );
 
 		/*Load Customizer Sections.*/
+		require( get_template_directory() . '/inc/customizer/sections/logo-settings.php' );
 		require( get_template_directory() . '/inc/customizer/sections/theme-colors.php' );
 		require( get_template_directory() . '/inc/customizer/sections/comment-settings.php' );
 		require( get_template_directory() . '/inc/customizer/sections/post-settings.php' );

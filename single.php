@@ -60,7 +60,9 @@ $img_size = wp_is_mobile() ? 'medium_large' : 'full';
 <script>
    (function($){
       $(document).ready(function(){
-         $('.img-holder .img-caption').css('width',$(".img-holder img")[0].clientWidth);
+         if($('.img-holder .img-caption')[0]){
+            $('.img-holder .img-caption').css('width',$(".img-holder img")[0].clientWidth);
+         }         
       });
 
       function fb_comments_func() {
