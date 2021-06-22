@@ -1,0 +1,395 @@
+/*
+Theme Name: CTPress 
+Description: CTPress theme by CodersTime to take full advantage of the flexibility of the news/magazine website. News Portal, Magazine, Organizations and businesses and blog have the ability to create dynamic landing pages with multiple layouts using the blocks. You can change theme color, logo, layout from customizer and theme option. Great things You can change single and page sidebar system. There are for layout for single page and page. Layout with sidebar, without sidebar, no sidebar and Full width. You can hide copyright link also.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Theme URI: https://coderstimes.com/ctpress/
+Author: Coders Time
+Author URI: https://facebook.com/coderstime/
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ctpress
+
+*/
+
+.wp-block-table {
+	margin: 20px auto;
+}
+
+.wp-block-table table tr th, .wp-block-table table tr td{
+	border: 1px solid #333131;
+	padding: 8px 10px;
+	color: #0e0e0e;
+}
+.wp-block-image img {
+	height: auto;
+}
+.single-post-content ul li{
+	font-size: 16px;
+    line-height: 20px;
+    color: #151414;
+}
+
+.page-numbers{
+    margin: 0;
+    padding: 0px 10px;
+    list-style: none;
+    float: left;
+    font-size: 22px;
+}
+.page-numbers.current{
+	background: var(--theme-bg-color);
+    color: #fff;
+}
+.pagination .screen-reader-text {
+    display: none;
+}
+
+
+/* Comment Header */
+#comments .required {color: red;}
+.comments-title,
+.comment-reply-title {
+	margin: 0 0 1.5rem;
+	color: #333;
+	font-family: "Francois One", arial, helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	font-size: 1.25rem;
+	text-transform: none;
+	line-height: 1.4;
+}
+
+.comment-reply-title {
+	padding: 0;
+}
+
+/* Comment List */
+.comment-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.comment,
+.trackback,
+.pingback {
+	margin: 0 0 1.5rem;
+	padding: 0;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.comment {
+	padding: 1.5rem 0 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.comment .comment-body {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+/* Comment Meta */
+.comment-meta {
+	float: left;
+	padding: 0;
+	width: 100%;
+}
+
+.comment-meta .comment-author img {
+	float: left;
+	margin-right: 1em;
+}
+
+.comment-meta .comment-author a:link,
+.comment-meta .comment-author a:visited {
+	text-decoration: none;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.comment-meta .comment-metadata {
+	margin-top: 0.3em;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.comment-meta .comment-metadata a {
+	margin-right: 1em;
+}
+
+.comment-meta .comment-metadata a:link,
+.comment-meta .comment-metadata a:visited {
+	color: rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+}
+
+.comment-meta .comment-metadata a:hover,
+.comment-meta .comment-metadata a:active {
+	color: rgba(0, 0, 0, 0.9);
+}
+
+.comment-awaiting-moderation {
+	display: block;
+	margin-top: 1.5rem;
+}
+
+/* Comment Content */
+.comment-content {
+	clear: left;
+	padding: 1.5rem 0 0;
+}
+
+.comment ol.children {
+	margin: 1.5rem 0 0;
+	list-style: none;
+}
+
+.comment ol.children .comment {
+	margin: 0;
+}
+
+/* Pingbacks and Trackbacks */
+.trackback .comment-meta,
+.pingback .comment-meta {
+	float: none;
+}
+
+.trackback .comment-meta .comment-author .says,
+.pingback .comment-meta .comment-author .says {
+	display: none;
+}
+
+.trackback .comment-meta .comment-metadata,
+.pingback .comment-meta .comment-metadata {
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+.trackback .comment-content,
+.pingback .comment-content {
+	display: none;
+}
+
+/* Comment Reply */
+.comment .reply {
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+.comment .comment-respond,
+.comment-list + .comment-respond {
+	margin: 1.5rem 0 0;
+	padding: 1.5rem 0 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Comment Pagination */
+.comment-navigation {
+	margin: 0 0 1rem;
+	padding: 1rem;
+}
+
+.comment-navigation .nav-previous {
+	float: left;
+}
+
+.comment-navigation .nav-next {
+	float: right;
+}
+
+.comment-navigation a:link,
+.comment-navigation a:visited {
+	color: rgba(0, 0, 0, 0.5);
+	text-decoration: none;
+}
+
+.comment-navigation a:hover,
+.comment-navigation a:active {
+	color: rgba(0, 0, 0, 0.9);
+}
+
+.comment-navigation .nav-previous a::before {
+	margin-right: 5px;
+	content: "\2190";
+}
+
+.comment-navigation .nav-next a::after {
+	margin-left: 5px;
+	content: "\2192";
+}
+
+/* Comment Form */
+.comment-form {
+	padding: 0;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.comment-form .logged-in-as {
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+.comment-form label {
+	display: inline-block;
+	min-width: 150px;
+	font-weight: bold;
+}
+
+.comment-form textarea {
+	margin: 20px 0;
+	width: 100%;
+	padding: 10px;
+}
+
+.comment-form .form-submit .submit{
+	background: var(--theme-bg-color);
+    border: none;
+    padding: 10px 20px;
+    color: var(--btn-bg-color);
+}
+
+.comment-form input[type="checkbox"] + label {
+	display: inline;
+	padding-left: 0.5em;
+	font-weight: normal;
+}
+
+.comment-reply-title small a {
+	margin-left: 1em;
+	text-transform: none;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	font-weight: normal;
+}
+
+
+/* Post Navigation */
+.post-navigation {
+	margin: 0 0 1.25rem;
+}
+.post-navigation .nav-links {
+	display: flex;
+}
+
+.post-navigation .nav-links .nav-previous,
+.post-navigation .nav-links .nav-next {
+	word-wrap: break-word;
+	width: 50%;
+}
+
+.post-navigation .nav-links .nav-next {
+	text-align: right;
+}
+
+/* Post Navigation Link Styling */
+.post-navigation .nav-links a:link,
+.post-navigation .nav-links a:visited {
+	color: rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+}
+
+.post-navigation .nav-links .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
+.post-navigation .nav-links a:link .entry-title,
+.post-navigation .nav-links a:visited .entry-title {
+	color: #333;
+}
+
+.post-navigation .nav-links a:hover .entry-title,
+.post-navigation .nav-links a:active .entry-title {
+	color: #e84747;
+}
+
+.post-navigation .nav-links .nav-link-text {
+	display: block;
+}
+
+.post-navigation .nav-links .nav-previous .nav-link-text::before {
+	margin-right: 5px;
+	content: "\00AB";
+}
+
+.post-navigation .nav-links .nav-next .nav-link-text::after {
+	margin-left: 5px;
+	content: "\00BB";
+}
+
+/*Sidebar widget Style*/
+.sidebar_widget {
+	clear: both;
+	overflow: hidden;
+}
+.sidebar_widget h3{
+	background: #f6f6f6;
+    text-align: center;
+    font-weight: 600;
+    color: #575555;
+    display: flex;
+    justify-content: space-evenly;
+}
+.sidebar_widget img{
+	max-width: 100%;
+	height: auto;
+}
+.sidebar_widget .tagcloud a{
+	font-size: 18px !important;
+	margin-left: 10px;
+}
+.sidebar_widget ul{}
+.sidebar_widget ul li{
+	margin: 5px 0px;
+    font-size: 18px;
+}
+.sidebar_widget ul li a{
+	display: inline-block;
+}
+
+/*sidebar widget table*/
+.sidebar_widget table {
+	width: 100%;
+    text-align: center;
+}
+
+.sidebar_widget table {}
+.sidebar_widget nav {
+	display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 700;
+}
+.sidebar_widget table caption {
+	text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+.sidebar_widget table tbody {}
+.sidebar_widget table tbody tr{}
+.sidebar_widget table tbody tr td{font-size: 18px;}
+.sidebar_widget table tbody tr td a{
+	color: var(--theme-bg-color);
+}
+
+.sidebar_widget #searchform {
+	margin: 20px auto;
+    width: fit-content;
+}
+.sidebar_widget #searchform #s{padding: 5px;}
+.sidebar_widget #searchform #searchsubmit{
+	padding: 5px 17px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #cac8c8;
+}
+
