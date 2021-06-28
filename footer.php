@@ -5,6 +5,7 @@ defined( 'ABSPATH' ) || exit;
  * Contains the closing of the #content div and all content after
  * @package ctpress
  */
+
 ?>
 
 <?php do_action( 'ctpress_before_footer' ); ?>
@@ -13,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
    <div class="container">
       <div class="row">
          <div class="col-sm-4 footer-box">
-            <div class="about-inner">
+            <div class="footer-logo">
                <img src="<?php echo ctpress_get_option('footer_logo')['url'] ? : ctpress_get_option('logo')['url'] ?>" class="img-responsive" alt="<?php echo get_bloginfo( 'name' ) . ' logo'; ?>" />
                <ul>
                   <?php echo ctpress_get_option('footer_logo_bottom');?>
@@ -22,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
             </div>
          </div>
          <div class="col-sm-4 footer-box">
-            <div class="about-inner address">
+            <div class="footer-logo address">
                <ul>
                   <li>
                     <?php echo ctpress_get_option('footer_info');?>                          

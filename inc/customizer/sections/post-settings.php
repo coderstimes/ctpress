@@ -30,7 +30,7 @@ function ctpress_customize_register_post_settings( $wp_customize ) {
 	$wp_customize->add_setting( 'ctpress[post-screen]', array(
 		'default'           => $default['post-screen'],
 		'type'              => 'option',
-		'transport'         => 'postMessage',
+		// 'transport'         => 'postMessage',
 		'sanitize_callback' => 'ctpress_sanitize_select',
 	) );
 

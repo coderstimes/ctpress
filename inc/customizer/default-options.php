@@ -50,8 +50,8 @@ function ctpress_theme_options() {
 function ctpress_default_options() {
 
 	$default_options = array(
-		'logo'            		 => ['url'=>get_template_directory_uri().'/assets/images/logo.svg'],
-		'footer-logo'            => ['url'=>get_template_directory_uri().'/assets/images/logo.svg'],
+		'logo'            		 => ['url'=>get_template_directory_uri().'/assets/images/logo.png'],
+		'footer_logo'            => ['url'=>get_template_directory_uri().'/assets/images/logo.png'],
 		'favicon'            	 => ['url'=>get_template_directory_uri().'/assets/images/favicon.png'],
 		'logo-position'          => 2,
 		'theme-date'             => true,

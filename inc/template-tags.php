@@ -26,6 +26,33 @@ if ( ! function_exists( 'ctpress_menu_search' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'ctpress_default_menu' ) ) :
+	/**
+	 * Displays the site default menu
+	 */
+	function ctpress_default_menu() {
+
+		?>
+		<ul id="menu-main-menu" class="nav navbar-nav navbar-right"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-64 nav-item dropdown" style="display: block;"><a href="#" aria-current="page" class="nav-link dropdown-toggle" id="navbarDropdown_64" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-86 current_page_item menu-item-113 nav-item"><a href="http://localhost/wordpress/" aria-current="page" class="dropdown-item">Home-1</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78 nav-item"><a href="http://localhost/wordpress/home-2/" class="dropdown-item">Two Column Home</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79 nav-item"><a href="http://localhost/wordpress/home-3/" class="dropdown-item">Three column Home</a></li>
+</ul>
+</li>
+<li class="test menu-item menu-item-type-post_type menu-item-object-page menu-item-75 nav-item"><a title="Titile Attribute Test" href="http://localhost/wordpress/about/" class="nav-link">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76 nav-item"><a title="Contact title" href="http://localhost/wordpress/contact/" class="nav-link">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-220 nav-item"><a title="Shop page" href="http://localhost/wordpress/shop/" class="nav-link">Shop</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-441 nav-item"><a href="http://localhost/wordpress/category/international/" class="nav-link">International</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-442 nav-item"><a href="http://localhost/wordpress/category/slider/" class="nav-link">slider</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-443 nav-item"><a href="http://localhost/wordpress/category/sports/" class="nav-link">Sports</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-444 nav-item"><a href="http://localhost/wordpress/category/politics/" class="nav-link">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-445 nav-item"><a href="http://localhost/wordpress/category/entertainment/" class="nav-link">Entertainment</a></li>
+</ul>
+		<?php
+	}
+endif;
+
 
 if ( ! function_exists( 'ctpress_site_title' ) ) :
 	/**

@@ -44,7 +44,7 @@ final class CTPressCustomizer {
 
 		// Add Theme Options Panel.
 		$wp_customize->add_panel( 'ctpress_options_panel', array(
-			'priority'       => 120,
+			'priority'       => 10,
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'title'          => esc_html__( 'Theme Settings', 'ctpress' ),

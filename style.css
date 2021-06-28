@@ -276,12 +276,14 @@ Text Domain: ctpress
 }
 .post-navigation .nav-links {
 	display: flex;
+	align-items: stretch;
+	width: 96%;
+	margin: 30px auto;
 }
 
 .post-navigation .nav-links .nav-previous,
 .post-navigation .nav-links .nav-next {
-	word-wrap: break-word;
-	width: 50%;
+	flex-grow: 1;
 }
 
 .post-navigation .nav-links .nav-next {

@@ -26,8 +26,6 @@ if ( ! function_exists( 'ctpress_theme_functions' ) ) :
         /*Add default posts and comments RSS feed links to head.*/
         add_theme_support( 'automatic-feed-links' );
     	add_theme_support( 'title-tag' );
-        // add_theme_support( 'custom-logo' );
-        // add_theme_support( 'custom-background' );
         add_theme_support( 'post-thumbnails' );
 
          add_theme_support(
@@ -54,16 +52,6 @@ if ( ! function_exists( 'ctpress_theme_functions' ) ) :
                 'audio',
             ]
         );
-
-        $defaults = array(
-            'height'               => 100,
-            'width'                => 400,
-            'flex-height'          => true,
-            'flex-width'           => true,
-            'unlink-homepage-logo' => true, 
-        );
- 
-        // add_theme_support( 'custom-logo', $defaults );
 
         /*Add theme support for AMP.*/
         add_theme_support( 'amp' );

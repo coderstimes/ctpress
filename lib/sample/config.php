@@ -223,7 +223,6 @@
                     'desc'  =>'Please upload your favicon here',
                     'type'  =>'media',
                     'id'    =>'favicon',
-                    'compiler' =>true,
                     'default' =>array(
                         'url' =>get_template_directory_uri().'/assets/images/favicon.png'
                     ),

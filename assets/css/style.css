@@ -153,7 +153,7 @@ a {
 .social-media,
 .posts ul,
 .twitter-inner ul,
-.about-inner ul,
+.footer-logo ul,
 .header-social>ul,
 .top-left-menu>ul,
 .headser-right-menu>ul,
@@ -2927,24 +2927,24 @@ footer {
 	background-color: #eee
 }
 
-.about-inner img {
+.footer-logo img {
 	margin-bottom: 5px;
-	width: 180px;
-	height: 50px;
+	width: auto;
+	max-height: 100px;
 }
 
-.about-inner p,
+.footer-logo p,
 .twitter-inner ul li {
 	color: #000;
 	margin-bottom: 15px
 }
 
-.about-inner li {
+.footer-logo li {
 	margin: 7px 0;
 	color: #000
 }
 
-.about-inner li i {
+.footer-logo li i {
 	color: #fff
 }
 
@@ -4060,6 +4060,7 @@ nav.navbar.bootsnav.navbar-subcat {
 .lead-news img{
 	max-width: 100%;
 }
+.lead-news .title-holder .post-title {color: var(--theme-color);}
 
 .col-right {
 	flex: 0 0 320px;
@@ -4483,16 +4484,16 @@ nav.navbar.bootsnav.navbar-subcat {
 	height: 100%
 }
 
-.about-inner h6 {
+.footer-logo h6 {
 	font-size: 18px;
 	font-weight: 600;
 	text-transform: uppercase
 }
 
-.about-inner p {
+.footer-logo p {
 	font-size: 16px;
 }
-.about-inner a{
+.footer-logo a{
 	display: initial;
 }
 
@@ -4849,12 +4850,12 @@ nav.navbar.bootsnav.navbar-subcat {
 	.cat-items .cat-item:first-child {
 		padding-left: 25px
 	}
-	.about-inner img {
+	.footer-logo img {
 		margin: 0 auto;
 		max-width: 300px;
 		margin-bottom: 15px
 	}
-	.about-inner {
+	.footer-logo {
 		text-align: center
 	}
 	.item.addthis-share {
@@ -5007,7 +5008,7 @@ nav.navbar.bootsnav.navbar-subcat {
 	justify-content: center
 }
 
-.about-inner.address li p{margin-bottom: 5px;}
+.footer-logo.address li p{margin-bottom: 5px;}
 /*advertisement_area css*/
 .advertisement_area{
 	width: fit-content;

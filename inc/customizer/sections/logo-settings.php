@@ -14,6 +14,8 @@
  */
 function ctpress_customize_register_logo_settings( $wp_customize ) {
 
+    $wp_customize->remove_section('title_tagline');
+
 	/*Add Sections for Logo Settings.*/
 	$wp_customize->add_section( 'ctpress_section_logo', array(
 		'title'    => esc_html__( 'Logo Settings', 'ctpress' ),
@@ -66,29 +68,46 @@ function ctpress_customize_register_logo_settings( $wp_customize ) {
             'select' => 'Select Logo',
             'remove' => 'Remove Logo',
             'change' => 'Change Logo',
-        )
+        ),
+    )));
+    
+	$wp_customize->add_setting( 'ctpress[favicon][url]', array(
+        'type'              => 'option',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'postMessage',
+    ));
+ 
+    $wp_customize->add_control( new WP_Customize_Site_Icon_Control( $wp_customize, 'ctpress_section_favicon_url', array(
+        'label' => esc_html__( 'Upload Site Icon', 'ctpress' ),
+        'description' => sprintf(
+			'<p>' . __( 'Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Upload one here!', 'ctpress' ) . '</p>' .
+			/* translators: %s: Site icon size in pixels. */
+			'<p>' . __( 'Site Icons should be square and at least %s pixels.', 'ctpress' ) . '</p>',
+			'<strong>512 &times; 512</strong>'
+		),
+        'priority' => 30,
+        'section' => 'ctpress_section_logo',
+        'settings' => 'ctpress[favicon][url]',
+        'height'      => 512,
+        'width'       => 512,
     )));
 
-	/*Add Setting and Control for showing menu search.*/
-	// $wp_customize->add_setting( 'ctpress[post-heading]', array(
-	// 	'default'           => $default['post-heading'],
-	// 	'type'              => 'option',
-	// 	'transport'         => 'postMessage',
-	// 	'sanitize_callback' => 'ctpress_sanitize_select',
-	// ) );
-
-	// $wp_customize->add_control( 'ctpress[post-heading]', array(
-	// 	'label'    => esc_html__( 'Select Heading Show Option', 'ctpress' ),
-	// 	'section'  => 'ctpress_section_logo',
-	// 	'settings' => 'ctpress[post-heading]',
-	// 	'type'     => 'select',
-	// 	'priority' => 20,
-	// 	'choices'  => array(
-	// 		esc_html__( 'Above Featured Image' ),
-	// 		esc_html__( 'Below Featured Image' ),
-	// 	),
-	// ) );
+    $wp_customize->add_setting( 'ctpress[footer_logo][url]', array(
+        'default'           => $default['footer_logo']['url'], /*Add Default Image URL */
+        'type'              => 'option',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+ 
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ctpress_section_flogo', array(
+        'label' => esc_html__( 'Upload Footer Logo', 'ctpress' ),
+        'priority' => 40,
+        'section' => 'ctpress_section_logo',
+        'settings' => 'ctpress[footer_logo][url]',
+    )));
 
 }
 add_action( 'customize_register', 'ctpress_customize_register_logo_settings' );
+
+
+?>
 
