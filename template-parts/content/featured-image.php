@@ -1,6 +1,6 @@
 <?php
 /**
- * Site Branding
+ * Site Feature Image
  *
  * @version 1.0
  * @package CtPress

@@ -3,6 +3,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * The single posts file.
  * @package ctpress
+ * @author Coders Time
  */
 
 /*

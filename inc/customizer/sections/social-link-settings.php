@@ -27,7 +27,7 @@ function ctpress_customize_register_social_settings( $wp_customize ) {
 	/*Hide Header social buttons.*/
 	$wp_customize->add_control( new ctpress_Customize_Header_Control(
 		$wp_customize, 'header_social_settings', array(
-			'label'    => esc_html__( 'Header Social button Show/Hide Settings', 'ctpress' ),
+			'label'    => esc_html__( 'Header Settings', 'ctpress' ),
 			'section'  => 'ctpress_section_social',
 			'settings' => array(),
 			'priority' => 1,
@@ -36,14 +36,14 @@ function ctpress_customize_register_social_settings( $wp_customize ) {
 
 	/*Add Setting and Control for header social buttons comment.*/
 	$wp_customize->add_setting( 'ctpress[header_social]', array(
-		'default'           => $default['header_social'],
+		'default'           => false,
 		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'ctpress_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'ctpress[header_social]', array(
-		'label'    => esc_html__( 'Hide Header Social', 'ctpress' ),
+		'label'    => esc_html__( 'Display Header Social', 'ctpress' ),
 		'section'  => 'ctpress_section_social',
 		'settings' => 'ctpress[header_social]',
 		'type'     => 'checkbox',
@@ -62,14 +62,14 @@ function ctpress_customize_register_social_settings( $wp_customize ) {
 
 	/*Add Setting and Control for header social buttons comment.*/
 	$wp_customize->add_setting( 'ctpress[footer_social]', array(
-		'default'           => $default['footer_social'],
+		'default'           => false,
 		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'ctpress_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'ctpress[footer_social]', array(
-		'label'    => esc_html__( 'Hide Footer Social buttons', 'ctpress' ),
+		'label'    => esc_html__( 'Display Footer Social buttons', 'ctpress' ),
 		'section'  => 'ctpress_section_social',
 		'settings' => 'ctpress[footer_social]',
 		'type'     => 'checkbox',

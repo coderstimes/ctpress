@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 /**
  * The template for displaying archive pages
  *
@@ -6,6 +7,7 @@
  *
  * @version 1.0
  * @package Ctpress
+ * @author Coders Time
  */
 
 get_header();

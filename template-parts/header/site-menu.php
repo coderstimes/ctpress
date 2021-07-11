@@ -1,9 +1,10 @@
 <?php
 /**
- * Site Branding
+ * Site Menu
  *
  * @version 1.0
  * @package Ctpress
+ * @author Coders Time
  */
 
 if ( has_nav_menu( 'main_menu' ) ) :

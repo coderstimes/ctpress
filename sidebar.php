@@ -3,6 +3,7 @@
  * The sidebar containing the widget area on blog pages.
  *
  * @package ctpress
+ * @author Coders Time
  */
 
 /*Check if Sidebar should be displayed.*/

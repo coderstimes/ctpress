@@ -1,9 +1,10 @@
 <?php
 /**
- * Site Branding
+ * Post Navigation
  *
  * @version 1.0
  * @package Ctpress
+ * @author Coders Time
  */
 
 if ( ctpress_get_option( 'post-tags' ) ) {

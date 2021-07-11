@@ -3,6 +3,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * The main template file.
  * @package ctpress
+ * @author Coders Time
  */
 get_header();
 

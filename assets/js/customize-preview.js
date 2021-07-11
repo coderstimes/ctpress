@@ -211,8 +211,8 @@
 
 	/*Header social button hide/show*/
 	wp.customize( 'ctpress[header_social]', function( value ) {	
-		value.bind( function( res ) {
-			if ( res ) {
+		value.bind( function( newval ) {
+			if ( false === newval ) {
 				$(".header-social").addClass('d-none');
 			} else {
 				$(".header-social").removeClass('d-none');
@@ -222,8 +222,8 @@
 
 	/*Footer social button hide/show*/
 	wp.customize( 'ctpress[footer_social]', function( value ) {	
-		value.bind( function( res ) {
-			if ( res ) {
+		value.bind( function( newval ) {
+			if ( false === newval ) {
 				$(".footer-box .social-connect").addClass('d-none');
 			} else {
 				$(".footer-box .social-connect").removeClass('d-none');

@@ -1,9 +1,10 @@
 <?php
 /**
- * Site Branding
+ * Page Feature Image
  *
  * @version 1.0
  * @package Ctpress
+ * @author Coders Time
  */
 
 $img_size = wp_is_mobile() ? 'medium' : 'medium_large';

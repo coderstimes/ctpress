@@ -3,6 +3,7 @@
  * Implement theme options in the Customizer
  *
  * @package Ctpress
+ * @author Coders Time
  */
 
 final class CTPressCustomizer {
@@ -238,11 +239,11 @@ function ctpress_default_options() {
 
 function ctpress_body_classes( $classes ) {
 
-	// Get theme options from database.
+	/*Get theme options from database.*/
 	$theme_options = ctpress_theme_options();
 
 
-	// Check if sidebar is displayed on the left.
+	/*Check if sidebar is displayed on the left.*/
 	if ( $logo_position = $theme_options['logo-position'] ) {
 		switch( $logo_position ) {
          case 1 :  
@@ -267,28 +268,31 @@ function ctpress_body_classes( $classes ) {
 		$classes[] = 'sidebar-left';
 	}
 
-	// Hide Site Title?
+	/*Hide Site Title?*/
 	if ( false === $theme_options['site_title'] ) {
 		$classes[] = 'site-title-hidden';
 	}
 
-	// Hide Site Description?
+	/*Hide Site Description?*/
 	if ( false === $theme_options['site_description'] ) {
 		$classes[] = 'site-description-hidden';
 	}
 
-	// Hide Date?
+	/*Hide Date?*/
 	if ( false === $theme_options['theme-date'] ) {
 		$classes[] = 'theme-date-hidden';
 	}
 
-	// Hide Date?
-	// if ( ( false === $theme_options['theme-date'] && ! is_single() )
-	// 	or ( false === $theme_options['single_meta_date'] && is_single() ) ) {
-	// 	$classes[] = 'date-hidden';
-	// }
+	/*Hide Header Social?*/
+	if ( false === $theme_options['header_social'] ) {
+		$classes[] = 'header-social-hidden';
+	}
+	/*Hide Footer Social?*/
+	if ( false === $theme_options['footer_social'] ) {
+		$classes[] = 'footer-social-hidden';
+	}
 
-	// Adds a class of hfeed to non-singular pages.
+	/*Adds a class of hfeed to non-singular pages.*/
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}

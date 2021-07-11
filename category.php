@@ -3,6 +3,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * The catergory page.
  * @package ctpress
+ * @author Coders Time
  */
 get_header(); 
 ?>

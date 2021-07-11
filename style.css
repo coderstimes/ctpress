@@ -481,6 +481,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .site-title-hidden .site-title{display: none;}
 .site-description-hidden .site-description{display: none;}
 
-
 .navbar-mobile .navbar-mobile-logo {display: flex;justify-content: space-around;}
 .navbar-mobile .navbar-brand {max-width: 80%;overflow: hidden;}
+
+.header-social-hidden .header-social {display: none;}
+.footer-social-hidden .footer-box .social-connect {display: none;}

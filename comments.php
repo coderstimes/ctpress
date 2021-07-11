@@ -1,5 +1,5 @@
 <?php
-
+defined( 'ABSPATH' ) || exit;
 /**
  * The template for displaying comments
  *
@@ -9,6 +9,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package ctpress
+ * @author Coders Time
 */
 
 /*

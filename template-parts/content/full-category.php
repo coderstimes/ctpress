@@ -1,12 +1,11 @@
 <?php
 /**
- * Site Branding
+ * Site Full Category
  *
  * @version 1.0
  * @package Ctpress
  */
 $mobile = wp_is_mobile();
-// $img_size = $mobile ? 'medium' : 'medium_large';
 $img_size = $mobile ? 'medium' : 'medium';
 $margin_bottom = $mobile ? 'mb-5' : '';
 

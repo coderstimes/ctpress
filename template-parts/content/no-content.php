@@ -1,9 +1,10 @@
 <?php
 /**
- * Site Branding
+ * Site No Content Page
  *
  * @version 1.0
  * @package Ctpress
+ * @author Coders Time
  */
 ?>
 

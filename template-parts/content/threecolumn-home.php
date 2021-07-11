@@ -4,6 +4,7 @@
  *
  * @version 1.0
  * @package Ctpress
+ * @author Coders Time
  */
    $mobile = wp_is_mobile();
    $img_size = $mobile ? 'medium' : 'medium';
