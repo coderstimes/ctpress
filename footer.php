@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
             <div class="footer-logo">
                
                <?php if( isset(ctpress_get_option('footer_logo')['url']) ) :  ?>
-                  <img src="<?php echo ctpress_get_option('footer_logo')['url'] ? : ctpress_get_option('logo')['url'] ?>" class="img-responsive" alt="<?php echo get_bloginfo( 'name' ) . ' logo'; ?>" />
+                  <img src="<?php echo ctpress_get_option('footer_logo')['url']; ?>" class="img-responsive" alt="<?php echo get_bloginfo( 'name' ) . ' logo'; ?>" />
                <?php endif; ?>
                
                <div class="footer-description">
