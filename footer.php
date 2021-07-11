@@ -7,6 +7,7 @@ defined( 'ABSPATH' ) || exit;
  * @author coderstime
  */
 
+
 ?>
 
 <?php do_action( 'ctpress_before_footer' ); ?>
@@ -17,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
          <div class="col-sm-4 footer-box">
             <div class="footer-logo">
                
-               <?php if( isset(ctpress_get_option('footer_logo')['url']) ) :  ?>
+               <?php if( null !== ctpress_get_option('footer_logo') && false != ctpress_get_option('footer_logo')['url'] ) :  ?>
                   <img src="<?php echo ctpress_get_option('footer_logo')['url']; ?>" class="img-responsive" alt="<?php echo get_bloginfo( 'name' ) . ' logo'; ?>" />
                <?php endif; ?>
                
