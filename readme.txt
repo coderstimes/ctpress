@@ -1,7 +1,7 @@
 === CtPress ===
 Contributors: coderstime
 Author: coderstime
-Theme URI: https://coderstimes.com/ctpress/
+Theme URI: https://coderstimes.com/ctpress-theme/
 Requires at least: 5.2
 Tested up to: 5.7
 License: GPLv2 or later

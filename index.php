@@ -1,5 +1,4 @@
 <?php
-
 defined( 'ABSPATH' ) || exit;
 /**
  * The main template file.
@@ -7,7 +6,6 @@ defined( 'ABSPATH' ) || exit;
  * @author coderstime
  */
 get_header();
-$img_size = 'medium';
 
 ?>
 

@@ -7,8 +7,6 @@ defined( 'ABSPATH' ) || exit;
  * Template Name: Home Page 1
  */
 get_header(); 
-
-$img_size = 'medium';
 ?>
 
 <main class="page_main_wrapper my-4">         
