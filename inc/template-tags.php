@@ -8,6 +8,84 @@
  * @package Ctpress
  */
 
+
+if ( ! function_exists( 'ctpress_site_logo' ) ) :
+	/**
+	 * Displays the site logo in the header area
+	 */
+	function ctpress_site_logo() {
+
+		if ( has_custom_logo() ) : ?>
+
+			<div class="site-logo">
+				<?php the_custom_logo(); ?>
+			</div>
+
+			<?php
+		endif;
+	}
+endif;
+
+
+if ( ! function_exists( 'ctpress_site_title' ) ) :
+	/**
+	 * Displays the site title in the header area
+	 */
+	function ctpress_site_title() {
+
+		if ( is_home() ) :
+			?>
+
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+		<?php else : ?>
+
+			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+
+		<?php
+		endif;
+	}
+endif;
+
+
+if ( ! function_exists( 'ctpress_site_description' ) ) :
+	/**
+	 * Displays the site description in the header area
+	 */
+	function ctpress_site_description() 
+	{
+		$description = get_bloginfo( 'description', 'display' ); /* WPCS: xss ok. */
+
+		if ( $description || is_customize_preview() ) :
+			?>
+
+			<p class="site-description"><?php echo $description; ?></p>
+
+			<?php
+		endif;
+	}
+endif;
+
+
+if ( ! function_exists( 'ctpress_header_image' ) ) :
+	/**
+	 * Displays the custom header image below the navigation menu
+	 */
+	function ctpress_header_image() {
+		if ( has_header_image() ) :
+			?>
+
+			<div id="headimg" class="header-image default-header-image">
+
+				<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id, 'full' ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+
+			</div>
+
+			<?php
+		endif;
+	}
+endif;
+
 if ( ! function_exists( 'ctpress_menu_search' ) ) :
 	/**
 	 * Displays the site logo in the header area
@@ -23,33 +101,6 @@ if ( ! function_exists( 'ctpress_menu_search' ) ) :
 
 			<?php
 		endif;
-	}
-endif;
-
-if ( ! function_exists( 'ctpress_default_menu' ) ) :
-	/**
-	 * Displays the site default menu
-	 */
-	function ctpress_default_menu() {
-
-		?>
-		<ul id="menu-main-menu" class="nav navbar-nav navbar-right"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-64 nav-item dropdown" style="display: block;"><a href="#" aria-current="page" class="nav-link dropdown-toggle" id="navbarDropdown_64" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-<ul class="dropdown-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-86 current_page_item menu-item-113 nav-item"><a href="http://localhost/wordpress/" aria-current="page" class="dropdown-item">Home-1</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78 nav-item"><a href="http://localhost/wordpress/home-2/" class="dropdown-item">Two Column Home</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79 nav-item"><a href="http://localhost/wordpress/home-3/" class="dropdown-item">Three column Home</a></li>
-</ul>
-</li>
-<li class="test menu-item menu-item-type-post_type menu-item-object-page menu-item-75 nav-item"><a title="Titile Attribute Test" href="http://localhost/wordpress/about/" class="nav-link">About</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76 nav-item"><a title="Contact title" href="http://localhost/wordpress/contact/" class="nav-link">Contact</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-220 nav-item"><a title="Shop page" href="http://localhost/wordpress/shop/" class="nav-link">Shop</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-441 nav-item"><a href="http://localhost/wordpress/category/international/" class="nav-link">International</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-442 nav-item"><a href="http://localhost/wordpress/category/slider/" class="nav-link">slider</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-443 nav-item"><a href="http://localhost/wordpress/category/sports/" class="nav-link">Sports</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-444 nav-item"><a href="http://localhost/wordpress/category/politics/" class="nav-link">Politics</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-445 nav-item"><a href="http://localhost/wordpress/category/entertainment/" class="nav-link">Entertainment</a></li>
-</ul>
-		<?php
 	}
 endif;
 
@@ -191,7 +242,7 @@ if ( ! function_exists( 'ctpress_entry_author' ) ) :
 			esc_html( get_the_author() )
 		);
 
-		return '<span class="posted-by px-2 float-start" ' . $author_string . '</span>';
+		return '<div class="posted-by px-2 float-start"> ' . $author_string . ' </div>';
 	}
 endif;
 
@@ -242,7 +293,7 @@ if ( ! function_exists( 'ctpress_read_more_button' ) ) :
 	 * Displays the read more button on posts
 	 */
 	function ctpress_read_more_button() {
-		printf('<a href="%s" class="text-center"> <button type="button" class="readmore btn"> %s </button> </a>',get_the_permalink(), esc_html( 'Read More', 'ctpress' ));
+		printf('<a href="%s"><span class="readmore text-secondary">%s</span></a>', get_the_permalink(), esc_html__( 'Read More', 'ctpress' ) );
 	}
 endif;
 
@@ -262,6 +313,16 @@ if ( ! function_exists( 'ctpress_post_navigation' ) ) :
 
 		endif;
 	}
+
+	add_filter( 'navigation_markup_template', 'ctpress_navigation_template' );
+	function ctpress_navigation_template( $template ) {
+    $template = '
+    <nav class="navigation %1$s">
+      <div class="nav-links">%3$s</div>
+    </nav>';
+    return $template;
+	}
+
 endif;
 
 
@@ -308,12 +369,16 @@ if ( ! function_exists( 'ctpress_credit_link' ) ) :
 	      <div class="container">
 	         <div class="row">
 	            <div class="col-xs-12 col-md-12">
-	               <div class="copy"> 
+	               <div class="copyright_text"> 
 	               	<?php 
-	               	printf( 
-	               		esc_html__('Copyright &copy; 2021 %s | Powered by %s','ctpress'),
-	               		esc_html__( 'CTPress','ctpress' ),
-	               		'<a href="https://www.facebook.com/coderstime" style="display: inline-block;font-weight: bold;"> CTPress WordPress Theme </a>');
+	               	$coderstime_link = 'https://coderstimes.com/';
+	               	printf(
+	               		__( 'CTPress &copy; %d <a href="%s"> %s </a> | Theme by <a href="%s"> CTPress </a> ','ctpress'),
+	               		date('Y'),
+	               		esc_url('https://wordpress.org/'),
+	               		esc_html__( 'Proudly powered by WordPress','ctpress' ),
+	               		esc_url( $coderstime_link )
+	               	);
 	               	?> 
 	               </div>
 	            </div>

@@ -1,17 +1,13 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 /**
- * The main template file.
- * @package bengal
+ * The catergory page.
+ * @package ctpress
  */
 get_header(); 
-
-
 ?>
 
 <?php get_template_part( 'template-parts/breadcrumb/category', 'desktop' ); ?>
-
-   </header>
 
    <main class="category_wrapper mb-5">
 
@@ -38,5 +34,4 @@ get_header();
       </div>
    </main>
 
-<?php get_footer(); ?>
-
+<?php get_footer(); 

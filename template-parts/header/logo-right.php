@@ -5,7 +5,6 @@
  * @version 1.0
  * @package Ctpress
  */
-$date_time = ctpress_get_option('theme-date') == 0 ? '' : date('l, d F Y') ;
 ?>
 
 <div class="col-md-4 mt-4">
@@ -16,11 +15,6 @@ $date_time = ctpress_get_option('theme-date') == 0 ? '' : date('l, d F Y') ;
 </div>
 
 <div class="col-md-4">
-  <div class="logo my-4 text-end">
-    <a href="<?php echo  home_url(); ?>">
-       <img src="<?php echo ctpress_get_option('logo')['url'] ?>" class="logo" alt="<?php echo get_bloginfo( 'name' ) . ' logo'; ?>">
-    </a>
-    <p class="pt-2"> <?php echo $date_time; ?> </p>
-  </div> 
+  <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 </div>
  <!-- site logo -->

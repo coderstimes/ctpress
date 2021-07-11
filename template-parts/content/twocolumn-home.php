@@ -12,14 +12,14 @@
 ?>
 
    <div class="col-md-12 mt-5 br-bottom">
-
-        <?php 
-           $topleft_lead =0;
+ 
+        <?php
            $toplead= new WP_Query(array(
-                'post_type'=>'post',
-                'posts_per_page' => 1,
-                'post__in' => get_option( 'sticky_posts' ) ?: '',
-                'category__in'=> ctpress_get_option('topleft')
+                'post_type'            =>'post',
+                'posts_per_page'       => 1,
+                'post__in'             => get_option( 'sticky_posts' ),
+                'category__in'         => ctpress_get_option('topleft'),
+                'ignore_sticky_posts'  => 1,
             ));
            while( $toplead->have_posts() ) : $toplead->the_post(); 
         ?>
@@ -30,26 +30,25 @@
 
             <a href="<?php the_permalink()?>">
                <div class="post-content pt-4">
-                  <?php $topleft_lead=get_the_ID(); ?>
                   <div class="title-holder">
                      <h1 class="post-title no-margin"> <?php echo the_title(); ?> </h1>
                   </div>
                   <div class="post_desc p-t-10">
-                     <p> <?php echo more_content(50); ?> </p>
+                     <p> <?php echo ctpress_content(50); ?> </p>
                   </div>
                </div>
              </a>
 
         <?php endwhile; ?>
       </div>
-
-
+      
 <?php
 
    $row_num = 0;
    $home_news = new WP_Query(array( 
-      'post_type'=>'post',
-      'post__not_in' => [$topleft_lead]
+      'post_type'       =>'post',
+      'posts_per_page'  => 1,
+      'offset'          => 1
    ));
    if ( $home_news->have_posts()) :
       while( $home_news->have_posts()) : $home_news->the_post();
@@ -72,7 +71,7 @@
                   <?php the_title(); ?>
                </h2>
             </strong>
-            <p class="brief my-3"> <?php echo  more_content(30); ?> </p>
+            <p class="brief my-3"> <?php echo  ctpress_content(30); ?> </p>
             <?php ctpress_read_more_button(); ?>
          </div>
       </div>

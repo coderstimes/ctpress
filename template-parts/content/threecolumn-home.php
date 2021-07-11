@@ -9,11 +9,6 @@
    $img_size = $mobile ? 'medium' : 'medium';
    $margin_bottom = $mobile ? 'mb-5' : '';
 
-?>
-
-
-<?php
-
    $row_num = 0;
    $home_news = new WP_Query(array(  'post_type'=>'post'   ));
    if ( $home_news->have_posts()) :
@@ -37,7 +32,7 @@
                   <?php the_title(); ?>
                </h2>
             </strong>
-            <p class="brief my-3"> <?php echo  more_content(30); ?> </p>
+            <p class="brief my-3"> <?php echo  ctpress_content(30); ?> </p>
             <?php ctpress_read_more_button(); ?>
          </div>
       </div>

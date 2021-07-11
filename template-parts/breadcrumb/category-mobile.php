@@ -14,8 +14,8 @@ $category = get_queried_object();
             <li class="cat_name" style="position: absolute; z-index: 1">
                <a href="<?php echo get_category_link($category->cat_ID);?>"> <?php echo $category->name;?> </a>
             </li>
-
          </ul>
       </div>
    </div>
 </nav>
+<div class="clearFix"></div>

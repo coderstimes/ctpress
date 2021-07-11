@@ -222,9 +222,6 @@ class LatestPopular_Widget extends WP_Widget {
             </select>
         </p>
 
-
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/ReduxCore/assets/css/select2.css?ver=3.5.2">
-        <script src="<?php echo get_template_directory_uri(); ?>/lib/ReduxCore/assets/js/select2.js?ver=3.5.2"></script>
         <script type="text/javascript">
             jQuery(document).ready(function(){
                 jQuery(".category_select").select2();

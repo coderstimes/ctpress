@@ -24,14 +24,15 @@ $margin_bottom = $mobile ? 'mb-5' : '';
 
       <div class="mt-3">
          <div class="title-holder">
-            <strong>
                <h2 class="post-title no-margin p-b-10">
-                  <?php the_title(); ?>
+                  <strong> <?php the_title(); ?> </strong>
                </h2>
-            </strong>
-            <p class="brief my-3"> <?php echo  more_content(30); ?> </p>
-            <?php ctpress_read_more_button(); ?>
+            
          </div>
+         <p class="brief my-3"> 
+            <?php echo ctpress_content(30); ?> 
+         </p>
+         <p class="text-center mt-4"><?php ctpress_read_more_button(); ?></p>
       </div>
       
    </div>

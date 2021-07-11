@@ -41,10 +41,10 @@ function ctpress_customize_register_page_settings( $wp_customize ) {
 		'type'     => 'select',
 		'priority' => 10,
 		'choices'  => array(
-			1 => esc_html__( 'Right Sidebar' ),
-            2 => esc_html__( 'Left Sidebar' ),
-            3 => esc_html__( 'No Sidebar' ),
-            4 => esc_html__( 'Full width' ),
+			1 => esc_html__( 'Right Sidebar', 'ctpress' ),
+            2 => esc_html__( 'Left Sidebar', 'ctpress' ),
+            3 => esc_html__( 'No Sidebar', 'ctpress' ),
+            4 => esc_html__( 'Full width', 'ctpress' ),
 		),
 	) );
 
@@ -63,8 +63,8 @@ function ctpress_customize_register_page_settings( $wp_customize ) {
 		'type'     => 'select',
 		'priority' => 20,
 		'choices'  => array(
-			esc_html__( 'Above Feature Image' ),
-			esc_html__( 'Below Feature Image' ),
+			esc_html__( 'Above Feature Image', 'ctpress' ),
+			esc_html__( 'Below Feature Image', 'ctpress' ),
 		),
 	) );	
 

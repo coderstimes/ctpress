@@ -12,102 +12,117 @@
  *
  * @param object $wp_customize / Customizer Object.
  */
-function ctpress_customize_register_logo_settings( $wp_customize ) {
+function ctpress_customize_register_logo_settings( $wp_customize ) 
+{
+    /*Add postMessage support for site title and description.*/
+    $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-    $wp_customize->remove_section('title_tagline');
+    /*Add selective refresh for site title and description.*/
+    $wp_customize->selective_refresh->add_partial( 'blogname', array(
+        'selector'        => '.site-title a',
+        'render_callback' => 'ctpress_customize_partial_blogname',
+    ) );
+    $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+        'selector'        => '.site-description',
+        'render_callback' => 'ctpress_customize_partial_blogdescription',
+    ) );
 
-	/*Add Sections for Logo Settings.*/
-	$wp_customize->add_section( 'ctpress_section_logo', array(
-		'title'    => esc_html__( 'Logo Settings', 'ctpress' ),
-		'priority' => 40,
-		'panel'    => 'ctpress_options_panel',
-		'capability'  => 'edit_theme_options', /*Capability needed to tweak*/
-		'description' => __('Allows you to customize logo and logo position, After publish check result in live site', 'ctpress'), /*//Descriptive tooltip*/
-	) );
+    /*Add Display Site Title Setting.*/
+    $wp_customize->add_setting( 'ctpress[site_title]', array(
+        'default'           => true,
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'ctpress_sanitize_checkbox',
+    ) );
 
-	/*Get Default Settings.*/
-	$default = ctpress_default_options();
+    $wp_customize->add_control( 'ctpress[site_title]', array(
+        'label'    => esc_html__( 'Display Site Title', 'ctpress' ),
+        'section'  => 'title_tagline',
+        'settings' => 'ctpress[site_title]',
+        'type'     => 'checkbox',
+        'priority' => 10,
+    ) );
 
-	/*Add Setting and Control for showing menu search.*/
+    /*Add Display Tagline Setting.*/
+    $wp_customize->add_setting( 'ctpress[site_description]', array(
+        'default'           => true,
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'ctpress_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'ctpress[site_description]', array(
+        'label'    => esc_html__( 'Display Tagline', 'ctpress' ),
+        'section'  => 'title_tagline',
+        'settings' => 'ctpress[site_description]',
+        'type'     => 'checkbox',
+        'priority' => 11,
+    ) );
+
+    /*Add Retina Logo Headline.*/
+    $wp_customize->add_control( new Ctpress_Customize_Header_Control(
+        $wp_customize, 'ctpress[retina_logo_title]', array(
+            'label'    => esc_html__( 'Retina Logo', 'ctpress' ),
+            'section'  => 'title_tagline',
+            'settings' => array(),
+            'priority' => 8,
+        )
+    ) );
+
+    /*Add Display date Setting.*/
+    $wp_customize->add_setting( 'ctpress[theme-date]', array(
+        'default'           => true,
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'ctpress_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'ctpress[theme-date]', array(
+        'label'    => esc_html__( 'Display Date', 'ctpress' ),
+        'section'  => 'title_tagline',
+        'settings' => 'ctpress[theme-date]',
+        'type'     => 'checkbox',
+        'priority' => 12,
+    ) );
+
+
+	/*Add Setting and Control for logo position.*/
 	$wp_customize->add_setting( 'ctpress[logo-position]', array(
-		'default'           => $default['logo-position'],
+		'default'           => 2,
 		'type'              => 'option',		
 		'sanitize_callback' => 'ctpress_sanitize_select',
 	) );
 
 	$wp_customize->add_control( 'ctpress[logo-position]', array(
-		'label'    => esc_html__( 'Select Post Screen Option', 'ctpress' ),
-		'section'  => 'ctpress_section_logo',
+		'label'    => esc_html__( 'Select Logo Position', 'ctpress' ),
+		'section'  => 'title_tagline',
 		'settings' => 'ctpress[logo-position]',
 		'type'     => 'select',
-		'priority' => 10,
+		'priority' => 2,
 		'choices'  => array(
-			1 => esc_html__( 'Left Logo' ),
-            2 => esc_html__( 'Center Logo' ),
-            3 => esc_html__( 'Right Logo' ),            
-            4 => esc_html__( 'Right Logo Left Column' ),
-            5 => esc_html__( 'Left Logo Right Column' ),
+			1 => esc_html__( 'Left Logo', 'ctpress' ),
+            2 => esc_html__( 'Center Logo', 'ctpress' ),
+            3 => esc_html__( 'Right Logo', 'ctpress' ),            
+            4 => esc_html__( 'Right Logo Left Column', 'ctpress' ),
+            5 => esc_html__( 'Left Logo Right Column', 'ctpress' ),
 		),
 	) );
 
-
-	$wp_customize->add_setting( 'ctpress[logo][url]', array(
-        'default'			=> $default['logo']['url'], /*Add Default Image URL */
-        'type'              => 'option',
-        'sanitize_callback' => 'esc_url_raw',
-        'transport'         => 'postMessage',
-    ));
- 
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ctpress_section_logo_url', array(
-        'label' => esc_html__( 'Upload Main Logo', 'ctpress' ),
-        'priority' => 20,
-        'section' => 'ctpress_section_logo',
-        'settings' => 'ctpress[logo][url]',
-        'button_labels' => array(
-        	/*All These labels are optional*/
-            'select' => 'Select Logo',
-            'remove' => 'Remove Logo',
-            'change' => 'Change Logo',
-        ),
-    )));
-    
-	$wp_customize->add_setting( 'ctpress[favicon][url]', array(
-        'type'              => 'option',
-        'sanitize_callback' => 'esc_url_raw',
-        'transport'         => 'postMessage',
-    ));
- 
-    $wp_customize->add_control( new WP_Customize_Site_Icon_Control( $wp_customize, 'ctpress_section_favicon_url', array(
-        'label' => esc_html__( 'Upload Site Icon', 'ctpress' ),
-        'description' => sprintf(
-			'<p>' . __( 'Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Upload one here!', 'ctpress' ) . '</p>' .
-			/* translators: %s: Site icon size in pixels. */
-			'<p>' . __( 'Site Icons should be square and at least %s pixels.', 'ctpress' ) . '</p>',
-			'<strong>512 &times; 512</strong>'
-		),
-        'priority' => 30,
-        'section' => 'ctpress_section_logo',
-        'settings' => 'ctpress[favicon][url]',
-        'height'      => 512,
-        'width'       => 512,
-    )));
-
-    $wp_customize->add_setting( 'ctpress[footer_logo][url]', array(
-        'default'           => $default['footer_logo']['url'], /*Add Default Image URL */
-        'type'              => 'option',
-        'sanitize_callback' => 'esc_url_raw',
-    ));
- 
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ctpress_section_flogo', array(
-        'label' => esc_html__( 'Upload Footer Logo', 'ctpress' ),
-        'priority' => 40,
-        'section' => 'ctpress_section_logo',
-        'settings' => 'ctpress[footer_logo][url]',
-    )));
-
 }
+
 add_action( 'customize_register', 'ctpress_customize_register_logo_settings' );
 
+/**
+ * Render the site title for the selective refresh partial.
+ */
+function ctpress_customize_partial_blogname() {
+    bloginfo( 'name' );
+}
 
-?>
-
+/**
+ * Render the site tagline for the selective refresh partial.
+ */
+function ctpress_customize_partial_blogdescription() {
+    bloginfo( 'description' );
+}

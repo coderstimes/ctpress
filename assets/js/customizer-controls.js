@@ -25,5 +25,13 @@
 		wp.customize.control( 'ctpress[fb_appId]', setupControl );
 	} );
 
+	wp.customize.controlConstructor.ctpress_select2 = wp.customize.Control.extend( {
+	    ready: function() {
+	        var control = this;
+	        wp.customize.Control.prototype.ready.call( control );
+	        /*Set up select2 control in this.container...*/
+	        console.log(control);
+	    }
+	} );
 
 })( this.wp, jQuery );

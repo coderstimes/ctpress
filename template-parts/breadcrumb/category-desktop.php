@@ -19,4 +19,5 @@ $category = get_queried_object();
       </div>
    </div>
 </nav>
+<div class="clearFix"></div>
 

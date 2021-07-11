@@ -82,4 +82,27 @@ function ctpress_sanitize_html_text ( $value ) {
     ) );
 }
 
+/**
+ * Text sanitization
+ *
+ * @param  string   Input to be sanitized (either a string containing a single string or multiple, separated by commas)
+ * @return string   Sanitized input
+ */
+if ( ! function_exists( 'ctpress_text_sanitization' ) ) {
+    function ctpress_text_sanitization( $input ) {
+        if ( strpos( $input, ',' ) !== false) {
+            $input = explode( ',', $input );
+        }
+        if( is_array( $input ) ) {
+            foreach ( $input as $key => $value ) {
+                $input[$key] = sanitize_text_field( $value );
+            }
+            $input = implode( ',', $input );
+        }
+        else {
+            $input = sanitize_text_field( $input );
+        }
+        return $input;
+    }
+}
 

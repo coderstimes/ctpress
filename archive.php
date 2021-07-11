@@ -12,9 +12,7 @@ get_header();
 
 ?>
 
-   </header>
-
-   <main class="archive_wrapper my-5">
+   <main class="archive_wrapper my-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
       <div class="container">
          <div class="row">
 
@@ -26,12 +24,12 @@ get_header();
                <?php
                  if ( have_posts()) : 
 
-                  get_template_part( 'template-parts/content/full', 'category' ); 
-                  
-                  ctpress_pagination();
-               else :
-                  get_template_part( 'template-parts/content/no', 'content' );
-               endif;
+                     get_template_part( 'template-parts/content/full', 'category' ); 
+                     
+                     ctpress_pagination();
+                  else :
+                     get_template_part( 'template-parts/content/no', 'content' );
+                  endif;
                ?>
             </div>
 

@@ -148,6 +148,40 @@ function ctpress_gutenberg_support() {
 			'content'    => "<!-- wp:group {\"align\":\"full\",\"backgroundColor\":\"white\"} --><div class=\"wp-block-group alignfull has-white-background-color has-background\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns {\"align\":\"wide\"} --><div class=\"wp-block-columns alignwide\"><!-- wp:column {\"width\":20} --><div class=\"wp-block-column\" style=\"flex-basis:20%\"><!-- wp:heading --><h2> Project Name </h2><!-- /wp:heading --></div><!-- /wp:column --><!-- wp:column --><div class=\"wp-block-column\"><!-- wp:image --><figure class=\"wp-block-image\"><img alt=\"\"/></figure><!-- /wp:image --><!-- wp:heading {\"level\":3} --><h3>Project 1</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p><!-- /wp:paragraph --></div><!-- /wp:column --><!-- wp:column --><div class=\"wp-block-column\"><!-- wp:image --><figure class=\"wp-block-image\"><img alt=\"\"/></figure><!-- /wp:image --><!-- wp:heading {\"level\":3} --><h3>Project 2</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p><!-- /wp:paragraph --></div><!-- /wp:column --></div><!-- /wp:columns --></div></div><!-- /wp:group -->",
 			'categories' => array( 'ctpress' ),
 		) );
+
+		$ctpress_block_styles = apply_filters( 'ctpress_block_style', array(
+		    	array(
+			        'name'         => 'blue-quote',
+			        'label'        => __( 'Blue Quote', 'ctpress' ),
+			        'inline_style' => '.wp-block-quote.is-style-blue-quote { color: blue; }',
+			    ),
+		    	array(
+			        'name'         => 'red-quote',
+			        'label'        => __( 'Red Quote', 'ctpress' ),
+			        'inline_style' => '.wp-block-quote.is-style-red-quote { color: red; }',
+			    ),
+		    	array(
+			        'name'         => 'black-quote',
+			        'label'        => __( 'Black Quote', 'ctpress' ),
+			        'inline_style' => '.wp-block-quote.is-style-black-quote { color: black; }',
+			    ),
+		    	array(
+			        'name'         => 'white-quote',
+			        'label'        => __( 'White Quote', 'ctpress' ),
+			        'inline_style' => '.wp-block-quote.is-style-white-quote { color: white; }',
+			    ),
+		    	array(
+			        'name'         => 'gray-quote',
+			        'label'        => __( 'Gray Quote', 'ctpress' ),
+			        'inline_style' => '.wp-block-quote.is-style-gray-quote { color: gray; }',
+			    )
+		    )
+		);
+
+		foreach( $ctpress_block_styles as $ctpress_block_style ) {
+			register_block_style( 'core/quote', $ctpress_block_style );
+		}
+
 	}
 }
 add_action( 'after_setup_theme', 'ctpress_gutenberg_support' );

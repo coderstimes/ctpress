@@ -2,7 +2,7 @@
 defined( 'ABSPATH' ) || exit;
 /**
  * The main template file.
- * @package bengal
+ * @package ctpress
  */
 get_header();
 

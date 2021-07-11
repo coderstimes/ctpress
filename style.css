@@ -1,16 +1,38 @@
 /*
 Theme Name: CTPress 
-Description: CTPress theme by CodersTime to take full advantage of the flexibility of the news/magazine website. News Portal, Magazine, Organizations and businesses and blog have the ability to create dynamic landing pages with multiple layouts using the blocks. You can change theme color, logo, layout from customizer and theme option. Great things You can change single and page sidebar system. There are for layout for single page and page. Layout with sidebar, without sidebar, no sidebar and Full width. You can hide copyright link also.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
 Theme URI: https://coderstimes.com/ctpress/
 Author: Coders Time
-Author URI: https://facebook.com/coderstime/
-Version: 1.0.0
+Author URI: https://coderstimes.com/
+Description: CTPress theme by CodersTime to take full advantage of the flexibility of the news/magazine website. News Portal, Magazine, Organizations and businesses and blog have the ability to create dynamic landing pages with multiple layouts using the blocks. You can change theme color, logo, layout from customizer and theme option. Great things You can change single and page sidebar system. There are for layout for single page and page. Layout with sidebar, without sidebar, no sidebar and Full width. You can hide copyright link also.
+Version: 1.0.9
+Requires at least: 5.2
+Tested up to: 5.7
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ctpress
 
+Tags: one-column, two-columns ,right-sidebar, left-sidebar, flexible-header, custom-header, custom-menu, editor-style, translation-ready, full-width-template, grid-layout, custom-logo, blog, news
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+
 */
+
+/*--------------------------------------------------------------
+# - Logo Style
+--------------------------------------------------------------*/
+
+.logo p {
+	color: var(--ctpress-logo-date-color);
+}
+
+/*--------------------------------------------------------------
+# - WP Block
+--------------------------------------------------------------*/
+
 
 .wp-block-table {
 	margin: 20px auto;
@@ -46,7 +68,24 @@ Text Domain: ctpress
 }
 
 
-/* Comment Header */
+/*--------------------------------------------------------------
+# - Comment
+--------------------------------------------------------------*/
+.article_comment {
+	position: relative;
+	padding-left: 55px;
+	padding-right: 50px;
+	margin: 25px 0;
+	background-color: #f9f9f9;
+	padding-top: 15px;
+	padding-bottom: 15px
+}
+
+.article_comment p {
+	font-size: 15px;
+	margin-bottom: 10px
+}
+
 #comments .required {color: red;}
 .comments-title,
 .comment-reply-title {
@@ -271,6 +310,7 @@ Text Domain: ctpress
 
 
 /* Post Navigation */
+.post-navigation .screen-reader-text{display: none;}
 .post-navigation {
 	margin: 0 0 1.25rem;
 }
@@ -290,43 +330,11 @@ Text Domain: ctpress
 	text-align: right;
 }
 
-/* Post Navigation Link Styling */
-.post-navigation .nav-links a:link,
-.post-navigation .nav-links a:visited {
-	color: rgba(0, 0, 0, 0.4);
-	text-decoration: none;
-}
 
-.post-navigation .nav-links .entry-title {
-	font-size: 20px;
-	font-size: 1.25rem;
-}
+/*--------------------------------------------------------------
+# - Sidebar
+--------------------------------------------------------------*/
 
-.post-navigation .nav-links a:link .entry-title,
-.post-navigation .nav-links a:visited .entry-title {
-	color: #333;
-}
-
-.post-navigation .nav-links a:hover .entry-title,
-.post-navigation .nav-links a:active .entry-title {
-	color: #e84747;
-}
-
-.post-navigation .nav-links .nav-link-text {
-	display: block;
-}
-
-.post-navigation .nav-links .nav-previous .nav-link-text::before {
-	margin-right: 5px;
-	content: "\00AB";
-}
-
-.post-navigation .nav-links .nav-next .nav-link-text::after {
-	margin-left: 5px;
-	content: "\00BB";
-}
-
-/*Sidebar widget Style*/
 .sidebar_widget {
 	clear: both;
 	overflow: hidden;
@@ -371,6 +379,9 @@ Text Domain: ctpress
     font-size: 18px;
     font-weight: 700;
 }
+.wp-caption, .wp-caption-text, .gallery-caption {
+
+}
 .sidebar_widget table caption {
 	text-align: center;
     font-size: 18px;
@@ -395,3 +406,81 @@ Text Domain: ctpress
     border-color: #cac8c8;
 }
 
+.navbar-mobile #navbar-menu.show {
+	display: block !important;
+	left: 0;
+}
+
+/*--------------------------------------------------------------
+# - Alignments
+--------------------------------------------------------------*/
+.alignleft,
+.alignright,
+.aligncenter {
+	display: block;
+}
+
+.aligncenter {
+	clear: both;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*--------------------------------------------------------------
+# - Copyright text
+--------------------------------------------------------------*/
+.copyright_credit_link .copyright_text *{
+	display: inline-block;
+	color: var(--ctpress-color);
+	text-decoration-line: underline;
+}
+
+
+/*--------------------------------------------------------------
+# - Screen Reader Text
+--------------------------------------------------------------*/
+.screen-reader-text {
+	position: absolute!important;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	width: 1px;
+	height: 1px
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	top: 5px;
+	left: 5px;
+	z-index: 100000;
+	display: block;
+	clip: auto!important;
+	padding: 15px 23px 14px;
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+	background-color: #f1f1f1;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+	color: #21759b;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 14px;
+	font-size: .875rem;
+	line-height: normal
+}
+
+/*--------------------------------------------------------------
+# - Customizer logo
+--------------------------------------------------------------*/
+
+.wp-custom-logo.logo-left .site-logo, .logo-left .site-branding { text-align: left;  }
+.wp-custom-logo.logo-right .site-logo, .logo-right .site-branding { text-align: right; }
+.wp-custom-logo.logo-center .site-logo, .logo-center .site-branding { text-align: center;  }
+.wp-custom-logo.theme-date-hidden .theme-date { display: none;  }
+
+.site-title-hidden .site-title{display: none;}
+.site-description-hidden .site-description{display: none;}
+
+
+.navbar-mobile .navbar-mobile-logo {display: flex;justify-content: space-around;}
+.navbar-mobile .navbar-brand {max-width: 80%;overflow: hidden;}

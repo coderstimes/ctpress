@@ -24,6 +24,19 @@ function ctpress_customize_register_footer_settings( $wp_customize ) {
 	/*Get Default Settings.*/
 	$default = ctpress_default_options();
 
+	$wp_customize->add_setting( 'ctpress[footer_logo][url]', array(
+        'default'           => $default['footer_logo']['url'], /*Add Default Image URL */
+        'type'              => 'option',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+ 
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ctpress_section_flogo', array(
+        'label' => esc_html__( 'Upload Footer Logo', 'ctpress' ),
+        'priority' => 40,
+        'section' => 'ctpress_section_footer',
+        'settings' => 'ctpress[footer_logo][url]',
+    )));
+
 	/*Add Footer Text setting.*/
 	$wp_customize->add_setting( 'ctpress[footer_text]', array(
 		'default'           => '',

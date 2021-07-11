@@ -72,3 +72,51 @@
 #customize-control-ctpress_theme_options-footer_text textarea {
 	height: 4em;
 }
+
+
+/* ==========================================================================
+   Standard Selection
+   ========================================================================== */
+.customize-control select,
+.select2-container--default .selection .select2-selection--single {
+	border: none;
+	background-color: #fcfcff;
+	position: relative;
+	border-radius: 0;
+	height: 27px;
+	line-height: 27px;
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.wp-customizer .select2-container--default .selection .select2-selection--multiple {
+	border: none;
+	background-color: #fcfcff;
+	border-radius: 0;
+	height: auto;
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.wp-customizer .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+	width: 95%;
+}
+
+.wp-customizer .select2-container--default .select2-selection--multiple .select2-selection__clear {
+	position: absolute;
+	right: 0;
+}
+
+.wp-customizer .select2-container .select2-dropdown {
+	z-index: 900000;
+}
+
+.customize-control select:active,
+.customize-control select:focus {
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+

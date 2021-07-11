@@ -15,5 +15,4 @@
 <meta name="robots" content="all" />
 <meta name="googlebot" content="all" />
 <meta name="googlebot-news" content="all" />
-<link rel="shortcut icon" type="image/png" href="<?php echo ctpress_get_option('favicon')['url'];?>" />
 
