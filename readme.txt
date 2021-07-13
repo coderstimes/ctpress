@@ -34,6 +34,9 @@ It’s clean and easy to read with creative design techniques that make it perfe
 = 1.0 =
 * Initial Release
 
+= 1.1 =
+  * inline script remove from page
+
 == Copyright ==
 
 CtPress WordPress Theme, Copyright 2021 Coderstimes.com
@@ -84,7 +87,19 @@ Copyright: (c) 2011, Vernon Adams (vern@newtypography.co.uk),
 License: MIT License (https://github.com/select2/select2)
 Copyright (c) 2012-2017 Kevin Brown, Igor Vaynberg, and Select2 contributors
 
-9. Image for theme screenshot, Credit Burst
-License: CC0 1.0 Universal (CC0 1.0)
-License URL: https://stocksnap.io/license
-Source: https://stocksnap.io/photo/IFZYRGBZZS
+9. Screenshot Images.
+	License: CC0 1.0 Universal (CC0 1.0) 
+    License URL: https://stocksnap.io/license
+
+    Lead Image, Copyright
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/IFZYRGBZZS
+
+    Middle Section, Copyright
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/K8NTTCGBZU
+
+    Right Section, Copyright
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/5XUIDY1YT3
+

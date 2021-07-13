@@ -1,6 +1,6 @@
 <?php
 
-class LatestPopular_Widget extends WP_Widget {
+class CTPress_LatestPopular_Widget extends WP_Widget {
 
     /**
      * Register widget with WordPress.
@@ -234,7 +234,7 @@ class LatestPopular_Widget extends WP_Widget {
 /*class Foo_Widget*/
 
 function ct_latest_popular_article_widget() {
-    register_widget( 'LatestPopular_Widget' );
+    register_widget( 'CTPress_LatestPopular_Widget' );
 }
 
 add_action( 'widgets_init', 'ct_latest_popular_article_widget' );

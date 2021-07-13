@@ -1,11 +1,12 @@
 <?php
 /**
- * Site Branding
+ * Page Heading
  *
- * @version 1.0
+ * @version 1.1
  * @package Ctpress
+ * @author Coders Time
  */
 ?>
 <div class="title-holder my-4 text-center">
-    <h1> <?php echo the_title(); ?> </h1>
+     <?php the_title('<h1>', '</h1>'); ?> 
 </div>

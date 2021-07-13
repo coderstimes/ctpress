@@ -253,8 +253,6 @@ if ( ! function_exists( 'ctpress_entry_comments' ) ) :
 	 */
 	function ctpress_entry_comments() {
 
-		
-
 		/*Check if comments are open or we have at least one comment.*/
 		if ( ! ( comments_open() || get_comments_number() ) || ctpress_get_option('post-comment') ) {
 			return;
@@ -262,7 +260,7 @@ if ( ! function_exists( 'ctpress_entry_comments' ) ) :
 
 		if ( ctpress_get_option('comment_option') ) {
 			/*Display facebook comment number*/
-			return sprintf('<span class="entry-comments ps-2 float-start fb-comments-count" data-href="%s"></span>', get_the_permalink() );
+			return sprintf('<span class="entry-comments ps-2 float-start fb-comments-count" data-href="%s"></span>', get_the_permalink() );			
 		} else {
 			/*Start Output Buffering.*/
 			ob_start();
@@ -283,6 +281,27 @@ if ( ! function_exists( 'ctpress_entry_comments' ) ) :
 		}
 
 		
+	}
+endif;
+
+if ( ! function_exists( 'ctpress_facebook_comment_sdk' ) ) :
+	/**
+	 * Displays the post comments
+	 */
+	function ctpress_facebook_comment_sdk() {
+		$fb_appId = ctpress_get_option('fb_appId');
+		/*Check facebook comment open, app id and is single page.*/
+		if ( ! ctpress_get_option('comment_option') && strlen($fb_appId) < 15 && !is_single() ) {
+			return;
+		}
+
+		if ( ctpress_get_option('comment_option') ) {
+				/* facebook comment sdk*/
+				?>
+				<div id="fb-root"></div>
+				<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=<?php echo $fb_appId; ?>&autoLogAppEvents=1" nonce="bWwlfA5s"></script>
+				<?php		
+		}
 	}
 endif;
 

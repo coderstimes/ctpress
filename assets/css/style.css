@@ -3458,6 +3458,7 @@ nav.navbar.bootsnav.navbar-subcat {
 }
 .content_area a{
 	color: var(--ctpress-a-color);
+	text-decoration-line: underline;
 }
 /*single page content style*/
 

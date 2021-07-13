@@ -2,7 +2,7 @@
 /**
  * Page Feature Image
  *
- * @version 1.0
+ * @version 1.1
  * @package Ctpress
  * @author Coders Time
  */
@@ -20,8 +20,6 @@ $img_caption = '';
 if( get_the_post_thumbnail_caption() && !ctpress_get_option('post_img_cap') ) :
    $img_caption = sprintf( '<p class="img-caption img-layer-thumb"> %1$s </p>',get_the_post_thumbnail_caption() ); 
 endif; 
-
-
 
 ?>
 <figure class="img-holder">

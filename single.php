@@ -19,8 +19,6 @@ get_header();
 $img_size = wp_is_mobile() ? 'medium_large' : 'full';
  
 ?>
-      <div id="fb-root"></div>
-
       <main class="page_main_wrapper">
 
          <?php get_template_part( 'template-parts/breadcrumb/single', 'page' ); ?>
@@ -59,21 +57,11 @@ $img_size = wp_is_mobile() ? 'medium_large' : 'full';
                      endif;  
                   ?>
                </div>
-
                   
                </div>
             </div>
-         </div>
-
-         
+         </div>         
         
       </main>
 
-
-<?php  if ( ctpress_get_option('comment_option')) : ?>
-   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=<?php echo ctpress_get_option('fb_appId')? : '492209628792946';?>&autoLogAppEvents=1" nonce="YLjsSwmz"></script>
-
-<?php endif; 
-
-   get_footer(); 
-?>
+<?php  get_footer(); 
