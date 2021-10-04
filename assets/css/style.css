@@ -143,7 +143,8 @@ nav.navbar li.dropdown ul.dropdown-menu>li a:hover {
 	color: #eb0254!important
 }
 
-.dropdown-menu{min-width: 15rem;}
+.dropdown-menu{min-width: 15rem;background-color: var(--ctpress-bg-color);}
+.dropdown-menu .nav-link{color: var(--ctpress-color);}
 
 nav.navbar.navbar-transparent ul.nav>li>a:hover,
 nav.navbar.no-background ul.nav>li>a:hover,

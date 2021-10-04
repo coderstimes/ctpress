@@ -142,7 +142,7 @@ final class codersTimePress {
         add_filter( 'nav_menu_link_attributes', [ $this,'add_additional_class_on_li' ], 10, 4 );
         /*ad class on ul li*/
         add_filter( 'nav_menu_css_class', function( $classes ) { $classes[] = 'nav-item'; return $classes; }, 10, 1 );
-        add_filter( 'nav_menu_submenu_css_class', function( $subclass ) { return ['dropdown-menu'];} );
+        add_filter( 'nav_menu_submenu_css_class', function( ) { return ['dropdown-menu'];} );
     }
 
     /**
@@ -196,7 +196,7 @@ final class codersTimePress {
         wp_register_style( 'ctpress-main-style', get_stylesheet_uri(), [], filemtime( CTPress_DIR . '/style.css') );
         wp_register_script( 'bootstrap', CTPress_URI . '/assets/bootstrap/js/bootstrap.min.js', [ 'jquery' ], '5.0.2',true );
         wp_register_script( 'bootstrap-bundle', CTPress_URI . '/assets/bootstrap/js/bootstrap.bundle.min.js', [ 'jquery' ], '5.0.2',true );
-        wp_register_script( 'ctpress-theme-common', CTPress_URI . '/assets/js/theme.js', [ 'jquery' ], '1.0.0',true );
+        wp_register_script( 'ctpress-theme-common', CTPress_URI . '/assets/js/theme.js', [ 'jquery' ], '1.1.0',true );
     }
 
     /**
@@ -275,7 +275,8 @@ final class codersTimePress {
     /*ad class on ul li a*/
     public function add_additional_class_on_li( $atts, $item, $args, $depth ) 
     {
-        if ( in_array('menu-item-has-children', $item->classes )) {
+
+        if ( in_array( 'menu-item-has-children', $item->classes )) {
             $item->classes[] = 'dropdown';
             $atts['class'] = 'nav-link dropdown-toggle';
             $atts['id'] = 'navbarDropdown_' . $item->ID;
