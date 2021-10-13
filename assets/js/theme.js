@@ -29,7 +29,13 @@
 
    $(".menu-item-has-children").click(function(){
       $(".dropdown-menu").removeAttr("data-bs-popper");
-   });   
+   });
+
+   /*single page video show problem solved by removing wp-has-aspect-ratio class*/
+   if ($(".is-type-video").hasClass('wp-has-aspect-ratio')) {
+      $(".is-type-video").removeClass('wp-has-aspect-ratio');
+   }
+
    
 })(jQuery);
 

@@ -31,16 +31,23 @@ It’s clean and easy to read with creative design techniques that make it perfe
 
 == Changelog ==
 
-= 1.0 =
-* Initial Release
-
-= 1.1 =
-  * inline script remove from page
+= 2.0 =
+  * Video featured on Loop content
+  * Video homepage
+  * Video format single page show video fix
 
 = 1.2 =
   * php explode error solved on multisite
   * homepage code reorganized
   * Sub menu fix
+
+= 1.1 =
+  * inline script remove from page
+
+= 1.0 =
+* Initial Release
+
+
 
 == Copyright ==
 

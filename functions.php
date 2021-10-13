@@ -312,6 +312,12 @@ function ctpress_setViews ( $postID )
 if ( ! function_exists( 'ctpress_get_post_image' ) ) :
     function ctpress_get_post_image ( $size = 'medium' ) {
         $image_id = get_post_thumbnail_id();
+        
+        if( get_post_format() === 'video' && !$image_id ) {
+            $iframes = get_media_embedded_in_content(apply_filters('the_content', get_the_content(), -1), array('video', 'iframe'));
+            return $iframes[0];
+        }
+
         $medium_img = wp_get_attachment_image_src( $image_id, $size );
         $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true) ?: get_the_title();
         
