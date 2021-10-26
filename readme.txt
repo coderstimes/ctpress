@@ -31,6 +31,9 @@ It’s clean and easy to read with creative design techniques that make it perfe
 
 == Changelog ==
 
+= 2.0.1 =
+  * Video height fix
+
 = 2.0 =
   * Video featured on Loop content
   * Video homepage
