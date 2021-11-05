@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
    <head>
       <?php get_template_part( 'template-parts/header/site', 'head' ); ?>
       <?php wp_head(); ?>
-      <?php do_action( 'ctpress_head_code' ); ?
+      <?php do_action( 'ctpress_head_code' ); ?>
    </head>
 
    <body <?php body_class('home-page'); ?>>
