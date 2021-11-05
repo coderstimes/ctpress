@@ -31,6 +31,12 @@ It’s clean and easy to read with creative design techniques that make it perfe
 
 == Changelog ==
 
+= 2.0.2 =
+  * Video iframe fix category page
+  * Homepage video iframe fix
+  * ad management extended
+  * Single page unicode tag fix
+  
 = 2.0.1 =
   * Video height fix
 

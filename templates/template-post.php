@@ -12,7 +12,10 @@ defined( 'ABSPATH' ) || exit;
     <div class="row">
 
       <div class="col-md-12">
-         <?php do_action( 'ctpress_before_content' ); ?>
+         <div class="advertisement_area">
+            <!-- 970x90 size -->
+            <?php do_action( 'ctpress_before_content' ); ?>
+         </div>         
       </div>
 
       <div class="col-md-7">
@@ -125,6 +128,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="row">
        <div class="col-md-12">
           <div class="advertisement_area">
+            <!-- 970x90 size -->
             <?php do_action( 'ctpress_after_top_news' ); ?>
           </div>
        </div>
@@ -186,7 +190,10 @@ defined( 'ABSPATH' ) || exit;
   <div class="container">
      <div class="row">
         <div class="col-md-12">
-           <?php do_action( 'ctpress_after_fullbody_section' ); ?>
+            <div class="advertisement_area">
+               <!-- 970x90 size -->
+               <?php do_action( 'ctpress_after_fullbody_section' ); ?>
+            </div>           
         </div>
      </div>
   </div>
@@ -284,6 +291,7 @@ defined( 'ABSPATH' ) || exit;
               <div class="row">
                  <div class="col-md-12">
                     <div class="advertisement_area">
+                        <!-- 728x90 size -->
                       <?php do_action( 'ctpress_after_body_one_section' ); ?>
                     </div>
                  </div>
@@ -340,9 +348,7 @@ defined( 'ABSPATH' ) || exit;
                       </a>
                    </div>
                 </div>
-
-                <?php endwhile; ?>
-                
+                <?php endwhile; ?>              
 
              </div>
           </div>
@@ -436,6 +442,7 @@ defined( 'ABSPATH' ) || exit;
             <div class="row">
                <div class="col-md-12">
                   <div class="advertisement_area">
+                     <!-- 728x90 size -->
                     <?php do_action( 'ctpress_body_four' ); ?>
                   </div>
                </div>
@@ -524,7 +531,8 @@ defined( 'ABSPATH' ) || exit;
           </div>
 
           <div class="advertisement_area my-4">
-            <!-- advertisement area -->     
+            <!-- advertisement area -->  
+            <!-- 970x90 size -->   
             <?php do_action('ctpress_home_rightsidebar_bottom'); ?>                
           </div>
 
@@ -589,7 +597,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="row">
        <div class="col-md-12">
           <div class="advertisement_area">
-            <!-- Advertisement area -->
+            <!-- Advertisement area 970x90 size-->
             <?php do_action('ctpress_body_bottom_section'); ?>
           </div>
        </div>
