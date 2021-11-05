@@ -2490,7 +2490,7 @@ h3 {
 }
 
 h3.post-title {
-	margin: 10px 0
+	margin: 10px 0;
 }
 
 .br-bottom {
@@ -2498,7 +2498,7 @@ h3.post-title {
 }
 
 .br-top {
-	border-top: 1px solid #e7e7e7
+	border-top: 1px solid var(--ctpress-bg-color);
 }
 
 .br-left {
@@ -2506,7 +2506,7 @@ h3.post-title {
 }
 
 .br-right {
-	border-right: 1px solid #e7e7e7
+	border-right: 1px solid var(--ctpress-bg-color);
 }
 
 .post-content {
@@ -3001,9 +3001,8 @@ h3.post-title {
 }
 
 .footer-logo h6 {
-	font-size: 18px;
-	font-weight: 600;
-	text-transform: uppercase
+	font-size: 16px;
+	font-weight: 700;
 }
 
 .footer-logo p {
@@ -3433,6 +3432,7 @@ nav.navbar.bootsnav.navbar-subcat {
     top: 40%;
     border-bottom: .5px solid #e6dddd;
     width: 90%;
+    border-color: var(--ctpress-bg-color);
 }
 .heading_area .section-title {
     position: relative;

@@ -4,7 +4,7 @@ Theme URI: https://coderstimes.com/ctpress-theme/
 Author: Coders Time
 Author URI: https://coderstimes.com/
 Description: CTPress theme for news/magazine Organizations and businesses and blog website. It has the ability to create dynamic landing pages with multiple layouts using the blocks. It has flexibility to change theme color, logo, layout from customizer. Great things You can change single and page sidebar system. There are four layout for page. Layout with sidebar, without sidebar, no sidebar and Full width. You can hide copyright link like premium theme.
-Version: 2.0.2
+Version: 2.0.3
 Requires at least: 5.2
 Tested up to: 5.7
 Requires PHP: 5.6
@@ -32,8 +32,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # - WP Block
 --------------------------------------------------------------*/
-
-
 .wp-block-table {
 	margin: 20px auto;
 }
@@ -46,12 +44,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .wp-block-image img {
 	height: auto;
 }
-.single-post-content ul li{
-	font-size: 16px;
-    line-height: 20px;
-    color: #151414;
-}
-
 .page-numbers{
     margin: 0;
     padding: 0px 10px;
@@ -66,7 +58,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .pagination .screen-reader-text {
     display: none;
 }
-
 
 /*--------------------------------------------------------------
 # - Comment

@@ -23,8 +23,8 @@ defined( 'ABSPATH' ) || exit;
                <?php endif; ?>
                
                <div class="footer-description">
-                  <?php echo ctpress_get_option('footer_logo_bottom');?>
-                  <?php echo ctpress_get_option('footer_text');?>
+                  <h6><?php echo ctpress_get_option('footer_logo_bottom');?></h6>
+                  <p><?php echo ctpress_get_option('footer_text');?></p>
                </div>
                
             </div>
