@@ -31,7 +31,7 @@ It’s clean and easy to read with creative design techniques that make it perfe
 
 == Changelog ==
 
-= 2.0.4 =
+= 2.0.5 =
   * Featured image caption fix
 
 = 2.0.3 =
