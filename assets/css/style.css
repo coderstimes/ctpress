@@ -3082,7 +3082,8 @@ h3.post-title {
 	font-weight: 600;
 	font-size: 1em;
 	line-height: 1.2;
-	width: 100%
+	width: 100%;
+	display: none;
 }
 
 .single-post-content h1 {

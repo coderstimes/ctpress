@@ -1,3 +1,4 @@
+;
 (function($){
 
    $(".search_btn").click(function(){
@@ -16,8 +17,9 @@
     });
 
    if($('.img-holder .img-caption')[0]){
-      $('.img-holder .img-caption').css('width',$(".img-holder img")[0].clientWidth);
+      $('.img-holder .img-caption').css({'width': $(".img-holder img")[0].clientWidth,'display':'block'});
    }
+
    setTimeout(fb_comments_func, false); 
    function fb_comments_func() {
       var fb_comments_count = $(".fb_comments_count");
@@ -36,8 +38,4 @@
       $(".is-type-video").removeClass('wp-has-aspect-ratio');
    }
 
-   
 })(jQuery);
-
-
-
