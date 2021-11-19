@@ -66,33 +66,29 @@ function ctpress_customize_register_post_settings( $wp_customize ) {
 			esc_html__( 'Above Featured Image', 'ctpress' ),
 			esc_html__( 'Below Featured Image', 'ctpress' ),
 		),
-	) );	
-
-	/*Add Menu Details Headline.*/
-	$wp_customize->add_control( new ctpress_Customize_Header_Control(
-		$wp_customize, 'post_img_cap_settings', array(
-			'label'    => esc_html__( 'Featured Image Caption Hide', 'ctpress' ),
-			'section'  => 'ctpress_section_post',
-			'settings' => array(),
-			'priority' => 30,
-		)
 	) );
 
-	/*Add Setting and Control for showing post image caption.*/
+	/*Featured Image caption settings.*/
 	$wp_customize->add_setting( 'ctpress[post_img_cap]', array(
 		'default'           => $default['post_img_cap'],
 		'type'              => 'option',
 		'transport'         => 'postMessage',
-		'sanitize_callback' => 'ctpress_sanitize_checkbox',
+		'sanitize_callback' => 'ctpress_sanitize_select',
 	) );
 
 	$wp_customize->add_control( 'ctpress[post_img_cap]', array(
-		'label'    => esc_html__( 'Hide Caption', 'ctpress' ),
+		'label'    => esc_html__( 'Featured Image Caption', 'ctpress' ),
 		'section'  => 'ctpress_section_post',
 		'settings' => 'ctpress[post_img_cap]',
-		'type'     => 'checkbox',
-		'priority' => 32
-	) );	
+		'type'     => 'select',
+		'priority' => 35,
+		'choices'  => array(
+			1 => esc_html__( 'Below Image', 'ctpress' ),
+            2 => esc_html__( 'Above Image', 'ctpress' ),
+            3 => esc_html__( 'Overlay Image', 'ctpress' ),
+            4 => esc_html__( 'Hide Caption', 'ctpress' ),
+		),
+	) );
 
 	/*Hide Post Navigation Headline.*/
 	$wp_customize->add_control( new ctpress_Customize_Header_Control(

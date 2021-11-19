@@ -185,7 +185,7 @@ function ctpress_default_options() {
 		'fb_appId'         		 => '492209628792946',
 		'post-screen'         	 => 1,
 		'post-heading'         	 => 0,
-		'post_img_cap'         	 => 0,
+		'post_img_cap'         	 => 1,
 		'post-navigation'      	 => 0,
 		'post-tags'      	 	 	 => 0,
 		'post-comment'      	 	 => 0,

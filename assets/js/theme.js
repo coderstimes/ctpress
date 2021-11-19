@@ -16,9 +16,11 @@
          }               
        });
 
-      if($('.img-holder .img-caption')[0]){
-         $('.img-holder .img-caption').css({'width': $(".img-holder img")[0].clientWidth,'display':'block'});
-      }
+      setTimeout(function(){
+         if( $('.img-holder img')[0].clientWidth && $('.img-holder .img-caption')[0] ){
+            $('.img-holder .img-caption').css({'width': $(".img-holder img")[0].clientWidth,'display':'block'});
+         }
+      },1000);
 
       setTimeout(fb_comments_func, false); 
       function fb_comments_func() {

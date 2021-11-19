@@ -33,8 +33,6 @@ $img_size = wp_is_mobile() ? 'medium_large' : 'full';
                      if ( have_posts()) : 
                         while (have_posts()) : 
                            the_post();
-                           ctpress_setViews( get_the_ID() );
-
                            switch ( ctpress_get_option('post-screen') ) {
                               case '1':
                                  get_template_part( 'template-parts/posts/right', 'sidebar' );

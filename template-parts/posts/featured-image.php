@@ -15,22 +15,30 @@ if ( !$image_url ) {
 
 $image = sprintf('<img class="img-responsive mx-auto d-block" src="%s" alt="%s">',$image_url,get_the_title());
 
-$img_caption = '';
-
-if( get_the_post_thumbnail_caption() && !ctpress_get_option('post_img_cap') ) :
-   $img_caption = sprintf( '<p class="img-caption img-layer-thumb"> %1$s </p>',get_the_post_thumbnail_caption() ); 
-endif; 
-
 ?>
 
 <figure class="img-holder">
     <?php 
-      if( ctpress_get_option('post-heading') ) :
-         echo $image;
-         echo $img_caption;
+      if( get_the_post_thumbnail_caption() ) :
+         switch ( ctpress_get_option('post_img_cap') ) {
+            case '1':
+               echo $image;
+               echo sprintf( '<p class="img-caption img-layer-bottom"> %1$s </p>',get_the_post_thumbnail_caption() );
+               break;
+            case '2':
+               echo sprintf( '<p class="img-caption img-layer-top"> %1$s </p>',get_the_post_thumbnail_caption() );
+               echo $image;
+               break;  
+            case '3':
+               echo $image;
+               echo sprintf( '<p class="img-caption img-layer-thumb"> %1$s </p>',get_the_post_thumbnail_caption() );
+               break;                      
+            default:
+               echo $image;               
+               break;
+         }
       else:
-         echo $img_caption;
-         echo $image;         
+         echo $image;
       endif; 
     ?>
  </figure>

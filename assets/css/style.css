@@ -57,11 +57,7 @@ p {
 	color: var(--ctpress-p-color);
 }
 
-a {
-	text-decoration: none;
-	display: block;
-	color: var(--ctpress-a-color);
-}
+a { text-decoration: none; color: var(--ctpress-a-color); }
 
 a:hover {
 	color: var(--ctpress-link-hover-color);
@@ -3084,6 +3080,13 @@ h3.post-title {
 	line-height: 1.2;
 	width: 100%;
 	display: none;
+}
+
+.img-layer-bottom, .img-layer-top{
+	margin: 20px auto;
+    border-top: 1px dashed var(--ctpress-bg-color);    
+    border-bottom: 1px dashed var(--ctpress-bg-color);
+    padding: 10px 0;
 }
 
 .single-post-content h1 {

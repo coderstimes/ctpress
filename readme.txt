@@ -31,8 +31,9 @@ It’s clean and easy to read with creative design techniques that make it perfe
 
 == Changelog ==
 
-= 2.0.5 =
+= 2.0.6 =
   * Featured image caption fix
+  * Featured image above, below and hide option add
 
 = 2.0.3 =
   * Homepage design fix

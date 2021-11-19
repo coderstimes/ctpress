@@ -36,12 +36,7 @@ if ( ! function_exists( 'ctpress_theme_functions' ) ) :
 
         add_theme_support(
             'post-formats',
-            [
-                'gallery',
-                'image',
-                'quote',
-                'video',
-            ]
+            [ 'gallery', 'image', 'quote', 'video']
         );
 
         /*Add theme support for AMP.*/
@@ -292,21 +287,6 @@ final class codersTimePress {
 }
 
 new codersTimePress();
-
-/*post view number function*/
-function ctpress_getviews( $postID ) 
-{
-    $count_key = 'post_views_count';
-    $count = get_post_meta( $postID, $count_key, true) ? : 1;
-    return $count;
-}
-
-function ctpress_setViews ( $postID ) 
-{
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true) ? : 0;
-    update_post_meta( $postID, $count_key, $count += 1 ); 
-}
 
 if ( ! function_exists( 'ctpress_get_post_image' ) ) :
     function ctpress_get_post_image ( $size = 'medium' ) {
