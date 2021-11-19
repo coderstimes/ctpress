@@ -195,7 +195,7 @@ final class codersTimePress {
         wp_register_style( 'ctpress-main-style', get_stylesheet_uri(), [], '2.0.4' );
         wp_register_script( 'bootstrap', CTPress_URI . '/assets/bootstrap/js/bootstrap.min.js', [ 'jquery' ], '5.0.2',true );
         wp_register_script( 'bootstrap-bundle', CTPress_URI . '/assets/bootstrap/js/bootstrap.bundle.min.js', [ 'jquery' ], '5.0.2',true );
-        wp_register_script( 'ctpress-theme-common', CTPress_URI . '/assets/js/theme.js', [ 'jquery' ], '2.0.4',true );
+        wp_register_script( 'ctpress-theme-common', CTPress_URI . '/assets/js/theme.js', [ 'jquery' ], '2.0.5',true );
     }
  
     /**
