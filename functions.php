@@ -124,7 +124,7 @@ final class codersTimePress {
     */
     public function __construct ( ) 
     {
-        define( 'CTPress_DIR', get_template_directory() );
+        define( 'ctpress_version', '2.0.7' );
         define( 'CTPress_URI', get_template_directory_uri() );
 
         add_action( 'init', array($this, 'ctpress_common_enqueue_register_files' ) );
@@ -172,7 +172,7 @@ final class codersTimePress {
     public function ctpress_admin_scripts ( ) 
     {   
         wp_enqueue_script('select2', CTPress_URI .'/assets/js/select2.min.js', array('jquery'), '4.1.0', true );
-        wp_enqueue_script('select2-custom', CTPress_URI .'/assets/js/select2-custom.js', array('select2'), '1.0.4', true );
+        wp_enqueue_script('select2-custom', CTPress_URI .'/assets/js/select2-custom.js', array('select2'), ctpress_version , true );
         wp_enqueue_style('select2', CTPress_URI .'/assets/css/select2.min.css',array(), '4.1.0' );
     }
 
@@ -185,12 +185,12 @@ final class codersTimePress {
     public function ctpress_common_enqueue_register_files ( ) 
     {
         wp_register_style( 'bootstrap', CTPress_URI . '/assets/bootstrap/css/bootstrap.min.css', [], '5.0.0' );
-        wp_register_style( 'bootsnav', CTPress_URI . '/assets/bootsnav/bootsnav.min.css', [], filemtime( CTPress_DIR . '/assets/bootsnav/bootsnav.min.css') );
-        wp_register_style( 'style-ctpress', CTPress_URI . '/assets/css/style.css', [], '2.0.4' );
-        wp_register_style( 'ctpress-main-style', get_stylesheet_uri(), [], '2.0.4' );
+        wp_register_style( 'bootsnav', CTPress_URI . '/assets/bootsnav/bootsnav.min.css', [], 'v.1.2' );
+        wp_register_style( 'style-ctpress', CTPress_URI . '/assets/css/style.css', [], ctpress_version );
+        wp_register_style( 'ctpress-main-style', get_stylesheet_uri(), [], ctpress_version );
         wp_register_script( 'bootstrap', CTPress_URI . '/assets/bootstrap/js/bootstrap.min.js', [ 'jquery' ], '5.0.2',true );
         wp_register_script( 'bootstrap-bundle', CTPress_URI . '/assets/bootstrap/js/bootstrap.bundle.min.js', [ 'jquery' ], '5.0.2',true );
-        wp_register_script( 'ctpress-theme-common', CTPress_URI . '/assets/js/theme.js', [ 'jquery' ], '2.0.5',true );
+        wp_register_script( 'ctpress-theme-common', CTPress_URI . '/assets/js/theme.js', [ 'jquery' ], ctpress_version,true );
     }
  
     /**

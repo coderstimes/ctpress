@@ -23,10 +23,11 @@ $margin_bottom = $mobile ? 'mb-5' : '';
 
       <div class="mt-3">
          <div class="title-holder">
+            <a href="<?php the_permalink(); ?>">
                <h2 class="post-title no-margin p-b-10">
                   <strong> <?php the_title(); ?> </strong>
                </h2>
-            
+            </a>
          </div>
          <p class="brief my-3"> 
             <?php echo ctpress_content(30); ?> 
